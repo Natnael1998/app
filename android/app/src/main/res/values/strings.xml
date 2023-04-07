@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">eps</string>
+    <string name="title_activity_main">eps</string>
+    <string name="package_name">com.eps.com</string>
+    <string name="custom_url_scheme">com.eps.com</string>
+</resources>
