@@ -18,6 +18,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { PushNotifications } from '@capacitor/push-notifications';
 
 import "./admin.css";
 import { useNavigate } from "react-router-dom";
@@ -40,9 +41,9 @@ const Final = () => {
   const codei = 1;
   const codea = 1;
   const [sliced, setSliced] = useState(
-    "math chemistry biology english physics it hpe civics  amharic"
+    ""
   );
-  const codeb = 1262;
+  const codeb = 1;
 
   const [math, setMath] = useState();
   const [classe, setClasse] = useState("marklist11A");
@@ -53,11 +54,13 @@ const Final = () => {
       setData(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     );
   };
-  const GetDataa = async () => {
-    onSnapshot(collection(db, "Final11"), (snapshot) =>
-      setDataa(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-    );
-  };
+    const GetDataa = async () => {
+      onSnapshot(collection(db, "Final11"), (snapshot) =>
+        setDataa(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+      );
+    };
+
+
 
   const handle = (e) => {
     setMathes(!mathes);
@@ -83,9 +86,9 @@ const Final = () => {
 
   useEffect(() => {
     GetData();
- GetDataa();
+    GetDataa();
+     handleb();
 
-   
     handle();
   }, [classe, subject]);
   console.log(data);
@@ -94,7 +97,7 @@ const Final = () => {
   return (
     <>
       {show ? (
-        <div>
+        <div className="bn">
           <div class="card">
             <span class="card__title">Math</span>
             <p class="card__content">enter the code provided by admin</p>
@@ -112,7 +115,7 @@ const Final = () => {
                   if (codem == password) {
                     setShow();
 
-                    setSliced(sliced.slice(0, 4));
+                    setSliced("math");
                   } else {
                   }
                 }}
@@ -138,7 +141,7 @@ const Final = () => {
                 onClick={() => {
                   if (codec == password) {
                     setShow();
-                    setSliced(sliced.slice(4, 14));
+                    setSliced("chemistry");
                   } else {
                     alert("incorrect password");
                   }
@@ -165,7 +168,7 @@ const Final = () => {
                 onClick={() => {
                   if (codeb == password) {
                     setShow();
-                    setSliced(sliced.slice(14, 23));
+                    setSliced("biology");
                   } else {
                     alert("incorrect password");
                   }
@@ -192,7 +195,7 @@ const Final = () => {
                 onClick={() => {
                   if (codee == password) {
                     setShow();
-                    setSliced(sliced.slice(22, 29));
+                    setSliced("english");
                   } else {
                     alert("incorrect password");
                   }
@@ -219,7 +222,7 @@ const Final = () => {
                 onClick={() => {
                   if (codei == password) {
                     setShow();
-                    setSliced(sliced.slice(39, 41));
+                    setSliced("it");
                   } else {
                     alert("incorrect password");
                   }
@@ -246,7 +249,7 @@ const Final = () => {
                 onClick={() => {
                   if (codeh == password) {
                     setShow();
-                    setSliced(sliced.slice(42, 45));
+                    setSliced("hpe");
                   } else {
                     alert("incorrect password");
                   }
@@ -273,7 +276,7 @@ const Final = () => {
                 onClick={() => {
                   if (codea == password) {
                     setShow();
-                    setSliced(sliced.slice(54, 61));
+                    setSliced("amharic");
                   } else {
                     alert("incorrect password");
                   }
@@ -300,7 +303,7 @@ const Final = () => {
                 onClick={() => {
                   if (codec == password) {
                     setShow();
-                    setSliced(sliced.slice(45, 52));
+                    setSliced("civics");
                   } else {
                     alert("incorrect password");
                   }
@@ -327,7 +330,7 @@ const Final = () => {
                 onClick={() => {
                   if (codep == password) {
                     setShow();
-                    setSliced(sliced.slice(31, 38));
+                    setSliced("physics");
                   } else {
                     alert("incorrect password");
                   }
@@ -341,11 +344,11 @@ const Final = () => {
         </div>
       ) : (
         <div>
-          <select name="" id="" onChange={(e) => setClasse(e.target.value)}>
+          <select name="" id="" onChange={(e) => setClasse(e.target.value) }>
             <option value="">--Section--</option>
-            <option value="marklist11A Final11">11 A</option>
-            <option value="marklist11B Final11">11 B</option>
-            <option value="marklist11C Final11">11 C</option>
+            <option value="marklist11A Mid11">11 A</option>
+            <option value="marklist11B Mid11">11 B</option>
+            <option value="marklist11C Mid11">11 C</option>
           </select>
           <div>
             <div>
@@ -382,7 +385,7 @@ const Final = () => {
                         </TableCell>
 
                         <TableCell>
-                        <button
+                          <button
                             className="TableButton"
                             onClick={async function n(e) {
                               e.preventDefault();

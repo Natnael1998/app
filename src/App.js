@@ -15,6 +15,7 @@ import Mid from "./Mid";
 import PostAssigment from './PostAssigment';
 import GetAssigment from './GetAssigment';
 import Add from './Add';
+import Addd, { AddDataForm } from './T';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/mid" element={<Mid />} />
         <Route path="/add" element={<Add />} />
         <Route path="/announcment" element={<Announcment />} />
+        <Route path="/a" element={<AddDataForm/>} />
 
         <Route path="/pass" element={<Pass />} />
         <Route path="/" element={<Home />} />

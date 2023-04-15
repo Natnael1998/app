@@ -15,7 +15,7 @@ const Announcment = () => {
     
 
       const GetData = async () => {
-       onSnapshot(collection(db, "marklist11B"), (snapshot) =>
+       onSnapshot(collection(db, "marklist"), (snapshot) =>
          setData(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
        )
       };

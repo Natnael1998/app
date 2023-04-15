@@ -18,6 +18,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { PushNotifications } from '@capacitor/push-notifications';
 
 import "./admin.css";
 import { useNavigate } from "react-router-dom";
@@ -40,9 +41,9 @@ const Mid = () => {
   const codei = 1;
   const codea = 1;
   const [sliced, setSliced] = useState(
-    "math chemistry biology english physics it hpe civics  amharic"
+    ""
   );
-  const codeb = 1262;
+  const codeb = 1;
 
   const [math, setMath] = useState();
   const [classe, setClasse] = useState("marklist11A");
@@ -58,6 +59,8 @@ const Mid = () => {
         setDataa(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
       );
     };
+
+
 
   const handle = (e) => {
     setMathes(!mathes);
@@ -94,7 +97,7 @@ const Mid = () => {
   return (
     <>
       {show ? (
-        <div>
+        <div className="bn">
           <div class="card">
             <span class="card__title">Math</span>
             <p class="card__content">enter the code provided by admin</p>
@@ -112,7 +115,7 @@ const Mid = () => {
                   if (codem == password) {
                     setShow();
 
-                    setSliced(sliced.slice(0, 4));
+                    setSliced("math");
                   } else {
                   }
                 }}
@@ -138,7 +141,7 @@ const Mid = () => {
                 onClick={() => {
                   if (codec == password) {
                     setShow();
-                    setSliced(sliced.slice(4, 14));
+                    setSliced("chemistry");
                   } else {
                     alert("incorrect password");
                   }
@@ -165,7 +168,7 @@ const Mid = () => {
                 onClick={() => {
                   if (codeb == password) {
                     setShow();
-                    setSliced(sliced.slice(14, 23));
+                    setSliced("biology");
                   } else {
                     alert("incorrect password");
                   }
@@ -192,7 +195,7 @@ const Mid = () => {
                 onClick={() => {
                   if (codee == password) {
                     setShow();
-                    setSliced(sliced.slice(22, 29));
+                    setSliced("english");
                   } else {
                     alert("incorrect password");
                   }
@@ -219,7 +222,7 @@ const Mid = () => {
                 onClick={() => {
                   if (codei == password) {
                     setShow();
-                    setSliced(sliced.slice(39, 41));
+                    setSliced("it");
                   } else {
                     alert("incorrect password");
                   }
@@ -246,7 +249,7 @@ const Mid = () => {
                 onClick={() => {
                   if (codeh == password) {
                     setShow();
-                    setSliced(sliced.slice(42, 45));
+                    setSliced("hpe");
                   } else {
                     alert("incorrect password");
                   }
@@ -273,7 +276,7 @@ const Mid = () => {
                 onClick={() => {
                   if (codea == password) {
                     setShow();
-                    setSliced(sliced.slice(54, 61));
+                    setSliced("amharic");
                   } else {
                     alert("incorrect password");
                   }
@@ -300,7 +303,7 @@ const Mid = () => {
                 onClick={() => {
                   if (codec == password) {
                     setShow();
-                    setSliced(sliced.slice(45, 52));
+                    setSliced("civics");
                   } else {
                     alert("incorrect password");
                   }
@@ -327,7 +330,7 @@ const Mid = () => {
                 onClick={() => {
                   if (codep == password) {
                     setShow();
-                    setSliced(sliced.slice(31, 38));
+                    setSliced("physics");
                   } else {
                     alert("incorrect password");
                   }
