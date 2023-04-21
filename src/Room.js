@@ -1,19 +1,23 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt";
+import { AiOutlineLeft } from "react-icons/ai";
+
 const Room = () => {
+  const navigate = useNavigate();
+ 
   const { roomId } = useParams();
   const myMetting = async (element) => {
-    const appId = 1383486895;
-
-    const serverSecret = "ecbac440f6f3b432ab846af043260fbb";
+    const appId = 1939000826;
+  
+    const serverSecret = "79580348bff88f5ebef9d43ef485d77b";
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
       appId,
       serverSecret,
       roomId,
 
       Date.now().toString(),
-      "clear this and enter your name"
+      "Name"
     );
     const zc = ZegoUIKitPrebuilt.create(kitToken);
     zc.joinRoom({
@@ -31,9 +35,24 @@ const Room = () => {
     });
   };
   return (
+   <>
+    <div  >
+    <button
+    className="btnn"
+      onClick={(e) => {
+        navigate("/result")
+      }}
+    >
+   <AiOutlineLeft/>
+      <span>Back</span>
+    </button>
+  </div>
+   
     <div>
+   
       <div ref={myMetting} />
     </div>
+   </>
   );
 };
 

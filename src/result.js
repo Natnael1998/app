@@ -8,6 +8,9 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { UserAuth } from "./AuthContext";
+import {GrStatusGood} from "react-icons/gr"
+
+import {GiCancel} from "react-icons/gi"
 const Result = () => {
   const [data,setData] =  useState({})
   const [avg, setAvg] = useState({biology:"",chemistry:"",math:"",hpe:"",it:""});
@@ -142,13 +145,15 @@ useEffect(() => {
                   </button>
                 </div>
                 <div class="banner">
-                  <span class="banner">{mid.name}</span>
+                  <span class="banner_tag">{mid.name}</span>
                 </div>
                 <div class="pack_name">your results</div>
 
                 <div class="lists">
                   <div class="list">
-                    <svg
+                  
+                   
+                   <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -161,7 +166,10 @@ useEffect(() => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span>biology:{mid.biology}</span>
+                   <span>biology:{mid.biology}  </span> 
+                 
+                   
+
                   </div>
                   <div class="list">
                     <svg
@@ -368,7 +376,7 @@ useEffect(() => {
                   </button>
                 </div>
                 <div class="banner">
-                  <span class>{avg.name}</span>
+                  <span class="banner_tag">{avg.name}</span>
                 </div>
                 <div class="pack_name">your result</div>
 
@@ -529,11 +537,11 @@ useEffect(() => {
                   <span class="quantity"> school </span>
                   <span class="text text--3"> announcment </span>
                 </button>
-                <button
+             <a target="__blank" style={{textDecoration:"none"}} href="https://school-video-chat.netlify.app/">
+
+             <button
                   class="item item--4"
-                  onClick={() => {
-                    navigate("/onlineclass");
-                  }}
+                  
                 >
                   <svg
                     height="24"
@@ -550,6 +558,7 @@ useEffect(() => {
                   <span class="quantity"> online</span>
                   <span class="text text--4"> class</span>
                 </button>
+             </a>
               </div>
             </div>
           </div>

@@ -1,7 +1,8 @@
 import { collection, getDocs, onSnapshot, query } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { AiFillFileText } from "react-icons/ai";
+import { AiFillBackward, AiFillFileText, AiOutlineBackward, AiOutlineLeft } from "react-icons/ai";
 import { db } from "./firebase";
+import { useNavigate } from "react-router-dom";
 
 const GetAssigment = () => {
   const [n, setN] = useState([]);
@@ -17,10 +18,23 @@ const GetAssigment = () => {
   useEffect(() => {
     getdata();
   }, []);
+  const navigate = useNavigate()
 
   return (
     <>
+     <div  >
+                  <button
+                  className="btnn"
+                    onClick={(e) => {
+                      navigate("/result")
+                    }}
+                  >
+                 <AiOutlineLeft/>
+                    <span>Back</span>
+                  </button>
+                </div>
       <div className="workContain">
+     
         <div className="work">
           {n.map((i) => {
             return (

@@ -290,6 +290,8 @@
 .list {
     display: flex;
     gap: 0.5rem;
+    
+   
 }
 
 .list svg {
@@ -375,4 +377,10 @@
     outline: none;
     color: white;
     border: 1px solid white;
+}
+
+.cb{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }

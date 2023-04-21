@@ -14,6 +14,7 @@ import Session from "./Session";
 
 import Authe from "./Auth";
 import { AuthContextProvider } from "./AuthContext";
+
 function App() {
   return (
     <BrowserRouter>

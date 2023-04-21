@@ -8,20 +8,23 @@ import {
   query,
   onSnapshot,
 } from "firebase/firestore";
-
+import { Plugins } from '@capacitor/core';
 import { db } from "./firebase";
 import "./parent.css";
 import { doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineLeft } from "react-icons/ai";
 const Session = () => {
     const [mediaStream, setMediaStream] = useState(null);
   const [value, setValue] = useState("");
   const [data, setData] = useState([]);
   const [item, setItem] = useState("11");
   const navigate = useNavigate();
+  const { permissions } = Plugins;
   const handle = useCallback(async () => {
-       
-    navigate(`/room/${value}`);
+
+  navigate(`/room/${value}`);
+    
   }, [navigate, value]);
 
   const GetData = async () => {
@@ -37,6 +40,18 @@ const Session = () => {
     GetData();
   }, [item]);
   return (
+    <>
+    <div  >
+    <button
+    className="btnn"
+      onClick={(e) => {
+        navigate("/result")
+      }}
+    >
+   <AiOutlineLeft/>
+      <span>Back</span>
+    </button>
+  </div>
     <div class="input-group">
       <label class="label">enter the name of your room </label>
       <input
@@ -73,6 +88,7 @@ const Session = () => {
       
       </div>
     </div>
+    </>
   );
 };
 

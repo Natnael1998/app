@@ -1,101 +1,87 @@
-import React from 'react'
-import { useState } from 'react';
-import { auth } from './firebase';
-import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { UserAuth } from './AuthContext';
-import './auth.css'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { UserAuth } from "./AuthContext";
+import { BsShieldFillExclamation } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import "./auth.css";
+
+import {AiOutlineLoading3Quarters} from "react-icons/ai"
 const Authe = () => {
-    const navigate = useNavigate()
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("");
-  const { user, logIn } = UserAuth();
-   
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+  const { logIn } = UserAuth();
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const handle = async (e) => {
     e.preventDefault();
-     
- 
+    setError("");
+    setLoading(true)
     try {
       await logIn(email, password);
       navigate("/result");
+      setLoading(false)
     } catch (error) {
       console.log(error);
-      
+      setLoading(false)
+
+      setError(true);
+      setInterval(() => {setError(false)},2500)
     }
-    }
-
-
-
-   
+  };
   return (
-    <div>
-      <form class="form">
-        <div className="image">
-          <img src="https://th.bing.com/th/id/OIP.iQ0v56Hn2pNaYbq327-tiAAAAA?pid=ImgDet&rs=1" />
-        </div>
+    <div className="loginContainer">
+      <img className="image" src="https://th.bing.com/th/id/R.890d2fe7a1e7da935a61bab7dbbfad88?rik=C1ZVJZgYzIg2Fw&riu=http%3a%2f%2fwww.ethioparentsschool.com%2fwp-content%2fuploads%2f2015%2f04%2fethioparentsschool.com_.png&ehk=MSpfaO60Q9TLgfS7md48GDYYX9E4UiIG051S0UIViHU%3d&risl=&pid=ImgRaw&r=0" alt="" />
+      <div>
+        {error ? (
+          <div className="LoginError">
+            <BsShieldFillExclamation size={25} />
+            <div>
+              <p >Error: 0</p>
+              <p>Credentials does not match</p>
+            </div>
+          </div>
+        ) : null}
+      </div>
+      <div className="loginForm">
+        <p className="loginSubTitle">Log In</p>
+        <p className="loginDetails">(Student or Parent Sign In)</p>
 
-        <div class="input-container">
-          <input
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            placeholder="Enter email"
-            type="email"
-          />
-          <span>
-            <svg
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                stroke-width="2"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </span>
-        </div>
-        <div class="input-container">
-          <input
-            placeholder="Enter password"
-            type="password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
+        <form onSubmit={handle}>
+          <div className="formContain">
+            <label htmlFor="">Your Email</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              placeholder="email@address.com"
+              required
+            />
+            <div>
+              <label htmlFor="">Your Password</label>
+            </div>
+            <input
+              required
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              type="password"
+              placeholder="+6 characters required"
+            />
 
-          <span>
-            <svg
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                stroke-width="2"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-              <path
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                stroke-width="2"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </span>
-        </div>
-        <button class="submit" onClick={handle} type="submit">
-          Enter
-        </button>
-      <div className="foteer">Developed by NBN </div>
-      </form>
+           
+
+            <button className="SignInButton">{loading ? <AiOutlineLoading3Quarters className="LoginLoading" size={25}/> : <p>Enter</p>}</button>
+          </div>
+        </form>
+      </div>
+        <p className="pp">Developed by NBN</p>
     </div>
   );
-}
+};
 
 export default Authe;
