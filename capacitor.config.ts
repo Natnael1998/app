@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.eps.com',
-  appName: 'eps',
+  appId: 'com.example.app',
+  appName: 'NBN',
   webDir: 'build',
   bundledWebRuntime: false
 };

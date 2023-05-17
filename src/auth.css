@@ -5,9 +5,10 @@
     align-items: center;
     justify-content: center;
    
-  
+  background-color: white !important;
 
-  
+height: 100vh;
+
   
   }
   
@@ -16,7 +17,7 @@
     mix-blend-mode: darken;
   width: 132px;
   margin-bottom: 25px;
-  margin-top: 25px;
+ margin-top: -150px;
 
   }
   
@@ -116,7 +117,9 @@
   .SignInButton {
     background: dodgerblue;
     border-radius: 10px;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
     box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
     
     border: none;
@@ -165,6 +168,6 @@
   
   
   .pp{
-    position: absolute;
-    bottom: -10px;
+    position: fixed;
+    bottom: 4px;
   }

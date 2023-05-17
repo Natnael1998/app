@@ -1,0 +1,12 @@
+{
+  "appId": "com.example.app",
+  "appName": "NBN",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+ 
+}

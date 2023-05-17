@@ -1,0 +1,76 @@
+.Settings{
+    display: flex;
+    flex-direction: column;
+  
+    margin-top: 30px;
+    width: 100%;
+    
+}
+.SettingsItems{
+    display: flex;
+    align-items: center;
+margin-bottom: 24px;
+margin-left: 20px;
+  
+}
+.SettingsItems >.icon {
+    border: 1px solid #69167c;
+   color: #69167c;
+   padding: 8px;
+   border-radius:10px 0   0 10px;
+
+  
+}
+
+.SettingsItems >input{
+    border: 1px solid #69167c;
+    padding: 5px 10px;
+    outline: none;
+ 
+    border-radius: 0 10px 10px 0;
+    background-color: #69167c;
+    color: white;
+
+}
+.SettingsItemss > button{
+    border: 1px solid #69167c;
+    padding: 6px 10px;
+    outline: none;
+    
+    border-radius: 0 10px 10px 0;
+    background-color: #69167c;
+    color: white !important;
+}
+.line{
+    border: 1px solid gray;
+    width: 100%;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+.SettingsItemss{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+ 
+}
+.SettingsItemss >.icon {
+    border: 1px solid red;
+   color: red;
+   padding: 8px;
+   border-radius:10px 0   0 10px;
+  
+}
+
+.SettingsItemss >button{
+    border: 1px solid #ded8d8;
+    padding: 5px 10px ;
+    outline: none;
+    color: #757474;
+    
+}

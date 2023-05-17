@@ -1,40 +1,52 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Home from "./home";
+
+import Home from "./pages/home";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Video from "./Video";
 
-import Parent from "./parent";
-import Result from "./result";
-import Room from "./Room";
-
-import GetAssigment from "./GetAssignment";
-import Announcment from "./Announcment";
-import Session from "./Session";
-
-import Authe from "./Auth";
-import { AuthContextProvider } from "./AuthContext";
+import Authe from "./pages/Auth";
+import { AuthContextProvider } from "./context/AuthContext";
+import VideoCall from "./pages/VideoCall";
+import Settings from "./pages/Settings";
+import Notice from "./pages/Notice";
+import Result from "./components/Result";
+import HomeWork from "./pages/Homework";
+import Attend from "./pages/Attend";
+import Books from "./components/Books";
+import { QuizProvider } from "./context/quiz";
+import Quiz from "./components/Quiz";
+import Mock from "./pages/Mock";
+import Stats from "./components/Stats";
+import Calender from "./components/Calender";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthContextProvider>
+        <QuizProvider>
+
         <Routes>
-          <Route path="/room/:roomId" element={<Room />} />
-          <Route path="/auth:id" />
-       
-          <Route path="/" element={<Authe />} />
-          <Route path="/video" element={<Video />} />
-          <Route path="/onlineclass" element={<Session />} />
-          <Route path="/announcment" element={<Announcment />} />
+        <Route path="/" element={<Authe />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/videocall" element={<VideoCall />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/notice" element={<Notice />} />
+        <Route path="/assignment" element={<HomeWork />} />
+        <Route path="/attend" element={<Attend />} />
+        <Route path="/test" element={<Quiz />} />
+        <Route path="/mock" element={<Mock />} />
+        <Route path="/stats" element={<Stats />} />
+          <Route path="/cal" element={<Calender />} />
+    
+          <Route path="/result/:id" element={<Result />} >
+          <Route path=":id"></Route>
+        </Route>
+        
+        <Route path="/book/:id" element={<Books />} >
+          <Route path=":id"></Route>
+        </Route>
 
-          <Route path="/result" element={<Result />}></Route>
-          <Route path="/result" element={<Result />}>
-            <Route path="/result:id" />
-          </Route>
-
-          <Route path="/get-post" element={<GetAssigment />} />
         </Routes>
+        </QuizProvider>
+        
       </AuthContextProvider>
     </BrowserRouter>
   );

@@ -1,0 +1,162 @@
+.carde {
+    color: aliceblue;
+    width: 180px;
+    padding: 20px;
+ 
+    border-radius: 24px;
+    display: flex;
+    width: 250px;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+   
+    background: #3A1078;
+   
+  
+   }
+   .carde > p {
+    font-weight: 600;
+    
+
+   }
+   body{
+    background-color: #6530b51f !important;
+   }
+  .card1{
+    background-color:#3A1078 ;
+  }
+  .card2{
+    background-color:#3A1078 ;
+  }
+ .card5{
+  background-color: #3A1078;
+ }
+
+
+
+   .cardee {
+    color: aliceblue;
+    width: 100%;
+    padding: 20px;
+    height: 104px;
+  
+    background: #212121;
+    box-shadow: 10px 10px 30px rgb(92, 92, 92),
+                -15px 1px 30px rgb(60, 60, 60);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+   }
+   .Link{
+   max-width: 100%;
+   
+  }
+   .Home{
+    margin-top: 30px;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+  
+   }
+   .circle{
+    border-radius: 50%;
+    border: 5px solid aliceblue;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .HomeTop{
+  
+
+   }
+   .center{
+    padding: 20px;
+    color: white;
+   }
+  
+   .menuHome{
+    background-color: #31094e;
+    height: 150px;
+    width: 150px;
+    z-index: 1;
+    position: absolute;
+    right: 10px;
+    border-radius: 10px;
+   }
+   .Nnn{
+   color: #AA6DD7;
+   font-weight: 700;
+   }
+.dff{
+  display: flex;
+  width: 100%;
+}
+   .boxContain{
+  
+    color: rgb(41, 39, 47);
+    display: flex;
+  
+    margin-bottom: 10px;
+   gap: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    text-align: center;
+    background-color: #3a1078d4;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 80px;
+  color: #fefdff;
+align-items: center;
+padding: 20px;
+max-width: 100%;
+
+   }
+   
+   .boxContainn{
+  
+    color: rgb(49, 49, 49);
+    display: flex;
+    
+    width: 340px;
+   gap: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    text-align: center;
+    background-color: #dedede;
+
+   
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 80px;
+  
+align-items: center;
+
+
+   }
+
+
+   .HomeImage{
+    height: 50px;
+    object-fit: contain;
+
+   }
+  
+   .Homescroll{
+    display: flex;
+   
+ overflow-x: auto;
+
+    width: 100%;
+    
+    gap: 20px;
+   padding: 0 10px;
+
+   }
+   ::-webkit-scrollbar {
+    display: none;
+  }

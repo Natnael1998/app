@@ -1,0 +1,42 @@
+.Books{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 24px;
+
+
+}
+.carddd {
+    width: 90%;
+
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+               padding: 20px;
+    margin-bottom: 20px;
+    z-index: 0;
+
+  }
+.Book{
+
+   
+    width: 100%;
+    color: aliceblue;
+    position: relative;
+    background-color: dodgerblue;
+    height: 100px;
+    padding: 20px;
+    border-radius: 24px;
+   
+
+}
+
+
+  
+
+.Book > p{
+    position: absolute;
+    top: 40px;
+}
